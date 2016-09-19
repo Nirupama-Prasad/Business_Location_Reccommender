@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/chordMap.css">
+	<script type="text/javascript" src="../javascript/d3.v3.min.js"></script>
+
+	<script type="text/javascript" src="../javascript/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../javascript/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	
+    
+
+
+
+</head>
+<body onload="displayChordMap1()">
+
+
+<button id="WomenOnlyButton">Women Only</button>
+<button id="MenOnlyButton">Men Only</button>
+<button id="AllTripsButton" disabled="true" >All</button>
+
+<div id="chart_placeholder"></div>
+
+
+   
+<pre id="neighborhoods">
+name,latitude,longitude,color
+10002,37.7244,-122.421,#DF151A
+10003,37.7107,-122.4372,#00DA3C
+10011,37.8021,-122.4369,#FD8603
+10014,37.793,-122.416,#00DA3C
+10021,37.7244,-122.421,#DF151A
+10028,37.7107,-122.4372,#00DA3C
+10029,37.8021,-122.4369,#FD8603
+10305,37.793,-122.416,#00DA3C
+10306,37.7244,-122.421,#DF151A
+10308,37.7107,-122.4372,#00DA3C
+10309,37.8021,-122.4369,#FD8603
+10312,37.793,-122.416,#00DA3C
+10314,37.7244,-122.421,#DF151A
+10461,37.7107,-122.4372,#00DA3C
+10465,37.8021,-122.4369,#FD8603
+10469,37.793,-122.416,#00DA3C
+10472,37.7244,-122.421,#DF151A
+10473,37.7107,-122.4372,#00DA3C
+11225,37.8021,-122.4369,#FD8603
+11201,37.793,-122.416,#00DA3C
+11203,37.7244,-122.421,#DF151A
+11207,37.7107,-122.4372,#00DA3C
+11208,37.8021,-122.4369,#FD8603
+11210,37.793,-122.416,#00DA3C
+11211,37.7244,-122.421,#DF151A
+11212,37.7107,-122.4372,#00DA3C
+11215,37.8021,-122.4369,#FD8603
+11216,37.793,-122.416,#00DA3C
+11217,37.7244,-122.421,#DF151A
+11222,37.7107,-122.4372,#00DA3C
+11225,37.8021,-122.4369,#FD8603
+11230,37.793,-122.416,#00DA3C
+11374,37.7244,-122.421,#DF151A
+11375,37.7107,-122.4372,#00DA3C
+11377,37.8021,-122.4369,#FD8603
+11378,37.793,-122.416,#00DA3C
+11379,37.7244,-122.421,#DF151A
+11412,37.7107,-122.4372,#00DA3C
+11433,37.8021,-122.4369,#FD8603
+11434,37.8021,-122.4369,#FD8603
+</pre>
+<pre id="all_trips">
+[<%for(var i=0;i<count.length-1;i++){%>
+[<%=count[i]%>], <% } %>
+[<%=count[count.length-1]%>]]
+</pre>
+
+
+
+<pre id="population">10000</pre>
+<div id="map-canvas"></div>
+</body>
+
+
+
+
+
+	<script type="text/javascript" src="../javascript/detailChordMapDB.js"></script>
+<script type="text/javascript" src="../javascript/circlemap.js"></script>
+  
+<script>
+google.maps.event.addDomListener(window, 'load', function(){temp("count");});
+ </script>
+
+</html>
+ 

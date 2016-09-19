@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>NYC customer analysis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/chordMap.css">
+    
+  <script type="text/javascript" src="javascript/d3.v3.min.js"></script>
+ <script type="text/javascript" src="javascript/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery-migrate-1.2.1.min.js"></script>
+    
+   
+<body class="index" onload="displayChordMap1()">    
+<h1>Analyze NYC Customers </h1> 
+<div id="chart_placeholder"> </div>
+<pre id="neighborhoods">
+name,latitude,longitude,color<% if(zip != 1) { %>
+<%= zip %>,37.7244,-122.421,#DF151A<% } else { %>
+10002,37.7244,-122.421,#DF151A<% } %>
+10003,37.7107,-122.4372,#00DA3C
+10011,37.8021,-122.4369,#FD8603
+10014,37.793,-122.416,#780000
+10021,37.7244,-122.421,#6600CC
+10028,37.7107,-122.4372,#6666FF
+10029,37.8021,-122.4369,#9999FF
+10305,37.793,-122.416,#990066
+10306,37.7244,-122.421,#3300FF
+10308,37.7107,-122.4372,#FF9966
+10309,37.8021,-122.4369,#99CC33
+10312,37.793,-122.416,#CCFFFF
+10314,37.7244,-122.421,#CCCCCC
+10461,37.7107,-122.4372,#660066
+10465,37.8021,-122.4369,#663366
+10469,37.793,-122.416,#CC0066
+10472,37.7244,-122.421,#CC6666
+10473,37.7107,-122.4372,#666699
+11225,37.8021,-122.4369,#CCCCFF
+11201,37.793,-122.416,#CC0000
+11203,37.7244,-122.421,#500000
+11207,37.7107,-122.4372,#100000
+11208,37.8021,-122.4369,#FFCCCC
+11210,37.793,-122.416,#00DA3C
+11211,37.7244,-122.421,#DF151A
+11212,37.7107,-122.4372,#00DA3C
+11215,37.8021,-122.4369,#FD8603
+11216,37.793,-122.416,#00DA3C
+11217,37.7244,-122.421,#DF151A
+11222,37.7107,-122.4372,#00DA3C
+11225,37.8021,-122.4369,#FD8603
+11230,37.793,-122.416,#00DA35
+11374,37.7244,-122.421,#DF1512
+11375,37.7107,-122.4372,#00DA35
+11377,37.8021,-122.4369,#FD8603
+11378,37.793,-122.416,#00ADE5
+11379,37.7244,-122.421,#DF1757
+11412,37.7107,-122.4372,#001122
+11433,37.8021,-122.4369,#FD7672
+11434,37.8021,-122.4369,#FD2876
+</pre>
+                <pre id="all_trips">
+                 <% if(zip) { %>   
+                [<%for(var i=0;i<count.length-1;i++){%>
+                [<%=count[i]%>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],<% } %>
+                [<%=count[count.length-1]%>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]<% } else { %>
+                 [<%for(var i=0;i<count.length-1;i++){%>
+                [<%=count[i]%>], <% } %>
+                [<%=count[count.length-1]%>]]<% } %>
+                </pre>
+                 </div>
+                 </center>     
+    <script type="text/javascript" src="../javascript/detailChordMapDB.js"></script>
+    <script type="text/javascript" src="../javascript/circlemap.js"></script>
+    </body>
+    </html>
